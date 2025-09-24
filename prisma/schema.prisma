@@ -30,7 +30,6 @@ model member {
   Class      String? @db.VarChar(255)
   Rank       String? @db.VarChar(255)
   mission_id Int?
-  quests     quests? @relation(fields: [mission_id], references: [mission_id], onDelete: NoAction, onUpdate: SetDefault, map: "member_ibfk_1")
 
   @@index([mission_id], map: "mission_id")
 }
@@ -43,5 +42,4 @@ model quests {
   reward          Int?
   Start_Date      DateTime? @db.Date
   Completion_Date DateTime? @db.Date
-  member          member[]
 }
