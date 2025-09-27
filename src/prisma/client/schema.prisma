@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/prisma/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model employees {
+  id     Int     @id @default(autoincrement())
+  Name   String? @db.VarChar(255)
+  Role   String? @db.VarChar(255)
+  Salary Int?
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model guild {
+  treasury   BigInt?
+  guild_id   Int     @id @default(autoincrement())
+  guild_name String? @db.Text
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model member {
+  member_id  Int     @id @default(autoincrement())
+  name       String? @db.VarChar(255)
+  Class      String? @db.VarChar(255)
+  Rank       String? @db.VarChar(255)
+  mission_id Int?
+  quests     quests? @relation(fields: [mission_id], references: [mission_id], onDelete: NoAction, onUpdate: SetDefault, map: "member_ibfk_1")
+
+  @@index([mission_id], map: "mission_id")
+}
+
+model quests {
+  mission_id      Int       @id @default(autoincrement())
+  title           String?   @db.Text
+  details         String?   @db.Text
+  difficulty      String?   @db.VarChar(2)
+  reward          Int?
+  Start_Date      DateTime? @db.Date
+  Completion_Date DateTime? @db.Date
+  member          member[]
+}
