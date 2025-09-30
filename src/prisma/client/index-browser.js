@@ -122,9 +122,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.EmployeesScalarFieldEnum = {
   id: 'id',
-  Name: 'Name',
-  Role: 'Role',
-  Salary: 'Salary'
+  name: 'name',
+  role: 'role',
+  salary: 'salary'
 };
 
 exports.Prisma.GuildScalarFieldEnum = {
@@ -136,8 +136,8 @@ exports.Prisma.GuildScalarFieldEnum = {
 exports.Prisma.MemberScalarFieldEnum = {
   member_id: 'member_id',
   name: 'name',
-  Class: 'Class',
-  Rank: 'Rank',
+  class: 'class',
+  rank: 'rank',
   mission_id: 'mission_id'
 };
 
@@ -162,8 +162,8 @@ exports.Prisma.NullsOrder = {
 };
 
 exports.Prisma.employeesOrderByRelevanceFieldEnum = {
-  Name: 'Name',
-  Role: 'Role'
+  name: 'name',
+  role: 'role'
 };
 
 exports.Prisma.guildOrderByRelevanceFieldEnum = {
@@ -172,8 +172,8 @@ exports.Prisma.guildOrderByRelevanceFieldEnum = {
 
 exports.Prisma.memberOrderByRelevanceFieldEnum = {
   name: 'name',
-  Class: 'Class',
-  Rank: 'Rank'
+  class: 'class',
+  rank: 'rank'
 };
 
 exports.Prisma.questsOrderByRelevanceFieldEnum = {

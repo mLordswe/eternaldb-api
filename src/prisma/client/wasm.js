@@ -94,9 +94,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.EmployeesScalarFieldEnum = {
   id: 'id',
-  Name: 'Name',
-  Role: 'Role',
-  Salary: 'Salary'
+  name: 'name',
+  role: 'role',
+  salary: 'salary'
 };
 
 exports.Prisma.GuildScalarFieldEnum = {
@@ -108,8 +108,8 @@ exports.Prisma.GuildScalarFieldEnum = {
 exports.Prisma.MemberScalarFieldEnum = {
   member_id: 'member_id',
   name: 'name',
-  Class: 'Class',
-  Rank: 'Rank',
+  class: 'class',
+  rank: 'rank',
   mission_id: 'mission_id'
 };
 
@@ -134,8 +134,8 @@ exports.Prisma.NullsOrder = {
 };
 
 exports.Prisma.employeesOrderByRelevanceFieldEnum = {
-  Name: 'Name',
-  Role: 'Role'
+  name: 'name',
+  role: 'role'
 };
 
 exports.Prisma.guildOrderByRelevanceFieldEnum = {
@@ -144,8 +144,8 @@ exports.Prisma.guildOrderByRelevanceFieldEnum = {
 
 exports.Prisma.memberOrderByRelevanceFieldEnum = {
   name: 'name',
-  Class: 'Class',
-  Rank: 'Rank'
+  class: 'class',
+  rank: 'rank'
 };
 
 exports.Prisma.questsOrderByRelevanceFieldEnum = {
@@ -190,7 +190,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
@@ -209,13 +209,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/prisma/client\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\n/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments\nmodel employees {\n  id     Int     @id @default(autoincrement())\n  Name   String? @db.VarChar(255)\n  Role   String? @db.VarChar(255)\n  Salary Int?\n}\n\n/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments\nmodel guild {\n  treasury   BigInt?\n  guild_id   Int     @id @default(autoincrement())\n  guild_name String? @db.Text\n}\n\n/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments\nmodel member {\n  member_id  Int     @id @default(autoincrement())\n  name       String? @db.VarChar(255)\n  Class      String? @db.VarChar(255)\n  Rank       String? @db.VarChar(255)\n  mission_id Int?\n  quests     quests? @relation(fields: [mission_id], references: [mission_id], onDelete: NoAction, onUpdate: SetDefault, map: \"member_ibfk_1\")\n\n  @@index([mission_id], map: \"mission_id\")\n}\n\nmodel quests {\n  mission_id      Int       @id @default(autoincrement())\n  title           String?   @db.Text\n  details         String?   @db.Text\n  difficulty      String?   @db.VarChar(2)\n  reward          Int?\n  Start_Date      DateTime? @db.Date\n  Completion_Date DateTime? @db.Date\n  member          member[]\n}\n",
-  "inlineSchemaHash": "6d037ad0d2882e439910b0438f548d75a5e738ac7afdab64d1d521286f0e8d6b",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/prisma/client\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\n/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments\nmodel employees {\n  id     Int     @id @default(autoincrement())\n  name   String? @db.VarChar(255)\n  role   String? @db.VarChar(255)\n  salary Int?\n}\n\n/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments\nmodel guild {\n  treasury   BigInt?\n  guild_id   Int     @id @default(autoincrement())\n  guild_name String? @db.Text\n}\n\n/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments\nmodel member {\n  member_id  Int     @id @default(autoincrement())\n  name       String? @db.VarChar(255)\n  class      String? @db.VarChar(255)\n  rank       String? @db.VarChar(255)\n  mission_id Int?\n  quests     quests? @relation(fields: [mission_id], references: [mission_id], onDelete: NoAction, onUpdate: SetDefault, map: \"member_ibfk_1\")\n\n  @@index([mission_id], map: \"mission_id\")\n}\n\nmodel quests {\n  mission_id      Int       @id @default(autoincrement())\n  title           String?   @db.Text\n  details         String?   @db.Text\n  difficulty      String?   @db.VarChar(2)\n  reward          Int?\n  Start_Date      DateTime? @db.Date\n  Completion_Date DateTime? @db.Date\n  member          member[]\n}\n",
+  "inlineSchemaHash": "8ff2d96b7ad2d16b31c4bbdba6ec8e6ba1c0599d7ce659e8daef6dc48384292c",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"employees\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"Name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Role\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Salary\",\"kind\":\"scalar\",\"type\":\"Int\"}],\"dbName\":null},\"guild\":{\"fields\":[{\"name\":\"treasury\",\"kind\":\"scalar\",\"type\":\"BigInt\"},{\"name\":\"guild_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"guild_name\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"member\":{\"fields\":[{\"name\":\"member_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Class\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Rank\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"mission_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"quests\",\"kind\":\"object\",\"type\":\"quests\",\"relationName\":\"memberToquests\"}],\"dbName\":null},\"quests\":{\"fields\":[{\"name\":\"mission_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"details\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"difficulty\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"reward\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"Start_Date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"Completion_Date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"member\",\"relationName\":\"memberToquests\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"employees\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"salary\",\"kind\":\"scalar\",\"type\":\"Int\"}],\"dbName\":null},\"guild\":{\"fields\":[{\"name\":\"treasury\",\"kind\":\"scalar\",\"type\":\"BigInt\"},{\"name\":\"guild_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"guild_name\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"member\":{\"fields\":[{\"name\":\"member_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"class\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"rank\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"mission_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"quests\",\"kind\":\"object\",\"type\":\"quests\",\"relationName\":\"memberToquests\"}],\"dbName\":null},\"quests\":{\"fields\":[{\"name\":\"mission_id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"details\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"difficulty\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"reward\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"Start_Date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"Completion_Date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"member\",\"relationName\":\"memberToquests\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),
