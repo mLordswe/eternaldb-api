@@ -5,14 +5,17 @@ import employeeRouters from "./endpoints/employees.js";
 import questsRouters from "./endpoints/quests.js";
 import { Prisma, PrismaClient } from "./prisma/client/index.js";
 import guildRouters from "./endpoints/guild.js";
-
+import health from "./endpoints/health.js";
+import cors from "cors";
 export const prisma = new PrismaClient();
 const app = express();
+app.use(cors());
 
 app.use("/api", memberRouter);
 app.use("/api", employeeRouters);
 app.use("/api", questsRouters);
 app.use("/api", guildRouters);
+app.use("/api", health);
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 	console.error(err);
 	res.status(500).json({ message: "Internal server error" });
