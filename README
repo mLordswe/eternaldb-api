@@ -14,6 +14,7 @@ Verktygsbibliotek med hjälpfunktioner och gemensamma komponenter för EternalDB
 Klona repot och installera beroenden:
 
 ```bash
-git clone https://github.com/yourusername/eternaldb-api.git
+git clone https://github.com/mlordswe/eternaldb-api.git
 cd eternaldb-api
 npm install
+```
