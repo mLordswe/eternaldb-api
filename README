@@ -1,20 +1,19 @@
 # EternalDB API Utils
 
-Utility functions and helpers for the EternalDB API project.
+Verktygsbibliotek med hjälpfunktioner och gemensamma komponenter för EternalDB API-projektet.
 
-## Features
+## ✨ Funktioner
 
--   Common utility functions for API development
--   Error handling helpers
--   Data formatting utilities
--   And more!
+- 🔹 Återanvändbara utility-funktioner för API-utveckling  
+- 🔹 Smidiga hjälpare för felhantering  
+- 🔹 Verktyg för dataformatering  
+- 🔹 Fler praktiska helpers för vardaglig backendutveckling
 
-## Installation
+## 📦 Installation
 
-Clone the repository and install dependencies:
+Klona repot och installera beroenden:
 
 ```bash
 git clone https://github.com/yourusername/eternaldb-api.git
 cd eternaldb-api
 npm install
-```
