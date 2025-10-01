@@ -147,8 +147,8 @@ exports.Prisma.QuestsScalarFieldEnum = {
   details: 'details',
   difficulty: 'difficulty',
   reward: 'reward',
-  Start_Date: 'Start_Date',
-  Completion_Date: 'Completion_Date'
+  start_Date: 'start_Date',
+  completion_Date: 'completion_Date'
 };
 
 exports.Prisma.SortOrder = {

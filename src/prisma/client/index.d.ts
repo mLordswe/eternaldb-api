@@ -2058,18 +2058,18 @@ export namespace Prisma {
   }
 
   export type GuildSumAggregateOutputType = {
-    treasury: bigint | null
+    treasury: number | null
     guild_id: number | null
   }
 
   export type GuildMinAggregateOutputType = {
-    treasury: bigint | null
+    treasury: number | null
     guild_id: number | null
     guild_name: string | null
   }
 
   export type GuildMaxAggregateOutputType = {
-    treasury: bigint | null
+    treasury: number | null
     guild_id: number | null
     guild_name: string | null
   }
@@ -2198,7 +2198,7 @@ export namespace Prisma {
   }
 
   export type GuildGroupByOutputType = {
-    treasury: bigint | null
+    treasury: number | null
     guild_id: number
     guild_name: string | null
     _count: GuildCountAggregateOutputType | null
@@ -2242,7 +2242,7 @@ export namespace Prisma {
     name: "guild"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      treasury: bigint | null
+      treasury: number | null
       guild_id: number
       guild_name: string | null
     }, ExtArgs["result"]["guild"]>
@@ -2614,7 +2614,7 @@ export namespace Prisma {
    * Fields of the guild model
    */
   interface guildFieldRefs {
-    readonly treasury: FieldRef<"guild", 'BigInt'>
+    readonly treasury: FieldRef<"guild", 'Int'>
     readonly guild_id: FieldRef<"guild", 'Int'>
     readonly guild_name: FieldRef<"guild", 'String'>
   }
@@ -3952,8 +3952,8 @@ export namespace Prisma {
     details: string | null
     difficulty: string | null
     reward: number | null
-    Start_Date: Date | null
-    Completion_Date: Date | null
+    start_Date: Date | null
+    completion_Date: Date | null
   }
 
   export type QuestsMaxAggregateOutputType = {
@@ -3962,8 +3962,8 @@ export namespace Prisma {
     details: string | null
     difficulty: string | null
     reward: number | null
-    Start_Date: Date | null
-    Completion_Date: Date | null
+    start_Date: Date | null
+    completion_Date: Date | null
   }
 
   export type QuestsCountAggregateOutputType = {
@@ -3972,8 +3972,8 @@ export namespace Prisma {
     details: number
     difficulty: number
     reward: number
-    Start_Date: number
-    Completion_Date: number
+    start_Date: number
+    completion_Date: number
     _all: number
   }
 
@@ -3994,8 +3994,8 @@ export namespace Prisma {
     details?: true
     difficulty?: true
     reward?: true
-    Start_Date?: true
-    Completion_Date?: true
+    start_Date?: true
+    completion_Date?: true
   }
 
   export type QuestsMaxAggregateInputType = {
@@ -4004,8 +4004,8 @@ export namespace Prisma {
     details?: true
     difficulty?: true
     reward?: true
-    Start_Date?: true
-    Completion_Date?: true
+    start_Date?: true
+    completion_Date?: true
   }
 
   export type QuestsCountAggregateInputType = {
@@ -4014,8 +4014,8 @@ export namespace Prisma {
     details?: true
     difficulty?: true
     reward?: true
-    Start_Date?: true
-    Completion_Date?: true
+    start_Date?: true
+    completion_Date?: true
     _all?: true
   }
 
@@ -4111,8 +4111,8 @@ export namespace Prisma {
     details: string | null
     difficulty: string | null
     reward: number | null
-    Start_Date: Date | null
-    Completion_Date: Date | null
+    start_Date: Date | null
+    completion_Date: Date | null
     _count: QuestsCountAggregateOutputType | null
     _avg: QuestsAvgAggregateOutputType | null
     _sum: QuestsSumAggregateOutputType | null
@@ -4140,8 +4140,8 @@ export namespace Prisma {
     details?: boolean
     difficulty?: boolean
     reward?: boolean
-    Start_Date?: boolean
-    Completion_Date?: boolean
+    start_Date?: boolean
+    completion_Date?: boolean
     member?: boolean | quests$memberArgs<ExtArgs>
     _count?: boolean | QuestsCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["quests"]>
@@ -4154,11 +4154,11 @@ export namespace Prisma {
     details?: boolean
     difficulty?: boolean
     reward?: boolean
-    Start_Date?: boolean
-    Completion_Date?: boolean
+    start_Date?: boolean
+    completion_Date?: boolean
   }
 
-  export type questsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"mission_id" | "title" | "details" | "difficulty" | "reward" | "Start_Date" | "Completion_Date", ExtArgs["result"]["quests"]>
+  export type questsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"mission_id" | "title" | "details" | "difficulty" | "reward" | "start_Date" | "completion_Date", ExtArgs["result"]["quests"]>
   export type questsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | quests$memberArgs<ExtArgs>
     _count?: boolean | QuestsCountOutputTypeDefaultArgs<ExtArgs>
@@ -4175,8 +4175,8 @@ export namespace Prisma {
       details: string | null
       difficulty: string | null
       reward: number | null
-      Start_Date: Date | null
-      Completion_Date: Date | null
+      start_Date: Date | null
+      completion_Date: Date | null
     }, ExtArgs["result"]["quests"]>
     composites: {}
   }
@@ -4552,8 +4552,8 @@ export namespace Prisma {
     readonly details: FieldRef<"quests", 'String'>
     readonly difficulty: FieldRef<"quests", 'String'>
     readonly reward: FieldRef<"quests", 'Int'>
-    readonly Start_Date: FieldRef<"quests", 'DateTime'>
-    readonly Completion_Date: FieldRef<"quests", 'DateTime'>
+    readonly start_Date: FieldRef<"quests", 'DateTime'>
+    readonly completion_Date: FieldRef<"quests", 'DateTime'>
   }
     
 
@@ -4989,8 +4989,8 @@ export namespace Prisma {
     details: 'details',
     difficulty: 'difficulty',
     reward: 'reward',
-    Start_Date: 'Start_Date',
-    Completion_Date: 'Completion_Date'
+    start_Date: 'start_Date',
+    completion_Date: 'completion_Date'
   };
 
   export type QuestsScalarFieldEnum = (typeof QuestsScalarFieldEnum)[keyof typeof QuestsScalarFieldEnum]
@@ -5065,13 +5065,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'BigInt'
-   */
-  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
-    
-
-
-  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -5142,7 +5135,7 @@ export namespace Prisma {
     AND?: guildWhereInput | guildWhereInput[]
     OR?: guildWhereInput[]
     NOT?: guildWhereInput | guildWhereInput[]
-    treasury?: BigIntNullableFilter<"guild"> | bigint | number | null
+    treasury?: IntNullableFilter<"guild"> | number | null
     guild_id?: IntFilter<"guild"> | number
     guild_name?: StringNullableFilter<"guild"> | string | null
   }
@@ -5159,7 +5152,7 @@ export namespace Prisma {
     AND?: guildWhereInput | guildWhereInput[]
     OR?: guildWhereInput[]
     NOT?: guildWhereInput | guildWhereInput[]
-    treasury?: BigIntNullableFilter<"guild"> | bigint | number | null
+    treasury?: IntNullableFilter<"guild"> | number | null
     guild_name?: StringNullableFilter<"guild"> | string | null
   }, "guild_id">
 
@@ -5178,7 +5171,7 @@ export namespace Prisma {
     AND?: guildScalarWhereWithAggregatesInput | guildScalarWhereWithAggregatesInput[]
     OR?: guildScalarWhereWithAggregatesInput[]
     NOT?: guildScalarWhereWithAggregatesInput | guildScalarWhereWithAggregatesInput[]
-    treasury?: BigIntNullableWithAggregatesFilter<"guild"> | bigint | number | null
+    treasury?: IntNullableWithAggregatesFilter<"guild"> | number | null
     guild_id?: IntWithAggregatesFilter<"guild"> | number
     guild_name?: StringNullableWithAggregatesFilter<"guild"> | string | null
   }
@@ -5250,8 +5243,8 @@ export namespace Prisma {
     details?: StringNullableFilter<"quests"> | string | null
     difficulty?: StringNullableFilter<"quests"> | string | null
     reward?: IntNullableFilter<"quests"> | number | null
-    Start_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
-    Completion_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
+    start_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
+    completion_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
     member?: MemberListRelationFilter
   }
 
@@ -5261,8 +5254,8 @@ export namespace Prisma {
     details?: SortOrderInput | SortOrder
     difficulty?: SortOrderInput | SortOrder
     reward?: SortOrderInput | SortOrder
-    Start_Date?: SortOrderInput | SortOrder
-    Completion_Date?: SortOrderInput | SortOrder
+    start_Date?: SortOrderInput | SortOrder
+    completion_Date?: SortOrderInput | SortOrder
     member?: memberOrderByRelationAggregateInput
     _relevance?: questsOrderByRelevanceInput
   }
@@ -5276,8 +5269,8 @@ export namespace Prisma {
     details?: StringNullableFilter<"quests"> | string | null
     difficulty?: StringNullableFilter<"quests"> | string | null
     reward?: IntNullableFilter<"quests"> | number | null
-    Start_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
-    Completion_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
+    start_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
+    completion_Date?: DateTimeNullableFilter<"quests"> | Date | string | null
     member?: MemberListRelationFilter
   }, "mission_id">
 
@@ -5287,8 +5280,8 @@ export namespace Prisma {
     details?: SortOrderInput | SortOrder
     difficulty?: SortOrderInput | SortOrder
     reward?: SortOrderInput | SortOrder
-    Start_Date?: SortOrderInput | SortOrder
-    Completion_Date?: SortOrderInput | SortOrder
+    start_Date?: SortOrderInput | SortOrder
+    completion_Date?: SortOrderInput | SortOrder
     _count?: questsCountOrderByAggregateInput
     _avg?: questsAvgOrderByAggregateInput
     _max?: questsMaxOrderByAggregateInput
@@ -5305,8 +5298,8 @@ export namespace Prisma {
     details?: StringNullableWithAggregatesFilter<"quests"> | string | null
     difficulty?: StringNullableWithAggregatesFilter<"quests"> | string | null
     reward?: IntNullableWithAggregatesFilter<"quests"> | number | null
-    Start_Date?: DateTimeNullableWithAggregatesFilter<"quests"> | Date | string | null
-    Completion_Date?: DateTimeNullableWithAggregatesFilter<"quests"> | Date | string | null
+    start_Date?: DateTimeNullableWithAggregatesFilter<"quests"> | Date | string | null
+    completion_Date?: DateTimeNullableWithAggregatesFilter<"quests"> | Date | string | null
   }
 
   export type employeesCreateInput = {
@@ -5356,40 +5349,40 @@ export namespace Prisma {
   }
 
   export type guildCreateInput = {
-    treasury?: bigint | number | null
+    treasury?: number | null
     guild_name?: string | null
   }
 
   export type guildUncheckedCreateInput = {
-    treasury?: bigint | number | null
+    treasury?: number | null
     guild_id?: number
     guild_name?: string | null
   }
 
   export type guildUpdateInput = {
-    treasury?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    treasury?: NullableIntFieldUpdateOperationsInput | number | null
     guild_name?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type guildUncheckedUpdateInput = {
-    treasury?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    treasury?: NullableIntFieldUpdateOperationsInput | number | null
     guild_id?: IntFieldUpdateOperationsInput | number
     guild_name?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type guildCreateManyInput = {
-    treasury?: bigint | number | null
+    treasury?: number | null
     guild_id?: number
     guild_name?: string | null
   }
 
   export type guildUpdateManyMutationInput = {
-    treasury?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    treasury?: NullableIntFieldUpdateOperationsInput | number | null
     guild_name?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type guildUncheckedUpdateManyInput = {
-    treasury?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    treasury?: NullableIntFieldUpdateOperationsInput | number | null
     guild_id?: IntFieldUpdateOperationsInput | number
     guild_name?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -5451,8 +5444,8 @@ export namespace Prisma {
     details?: string | null
     difficulty?: string | null
     reward?: number | null
-    Start_Date?: Date | string | null
-    Completion_Date?: Date | string | null
+    start_Date?: Date | string | null
+    completion_Date?: Date | string | null
     member?: memberCreateNestedManyWithoutQuestsInput
   }
 
@@ -5462,8 +5455,8 @@ export namespace Prisma {
     details?: string | null
     difficulty?: string | null
     reward?: number | null
-    Start_Date?: Date | string | null
-    Completion_Date?: Date | string | null
+    start_Date?: Date | string | null
+    completion_Date?: Date | string | null
     member?: memberUncheckedCreateNestedManyWithoutQuestsInput
   }
 
@@ -5472,8 +5465,8 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     difficulty?: NullableStringFieldUpdateOperationsInput | string | null
     reward?: NullableIntFieldUpdateOperationsInput | number | null
-    Start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     member?: memberUpdateManyWithoutQuestsNestedInput
   }
 
@@ -5483,8 +5476,8 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     difficulty?: NullableStringFieldUpdateOperationsInput | string | null
     reward?: NullableIntFieldUpdateOperationsInput | number | null
-    Start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     member?: memberUncheckedUpdateManyWithoutQuestsNestedInput
   }
 
@@ -5494,8 +5487,8 @@ export namespace Prisma {
     details?: string | null
     difficulty?: string | null
     reward?: number | null
-    Start_Date?: Date | string | null
-    Completion_Date?: Date | string | null
+    start_Date?: Date | string | null
+    completion_Date?: Date | string | null
   }
 
   export type questsUpdateManyMutationInput = {
@@ -5503,8 +5496,8 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     difficulty?: NullableStringFieldUpdateOperationsInput | string | null
     reward?: NullableIntFieldUpdateOperationsInput | number | null
-    Start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type questsUncheckedUpdateManyInput = {
@@ -5513,8 +5506,8 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     difficulty?: NullableStringFieldUpdateOperationsInput | string | null
     reward?: NullableIntFieldUpdateOperationsInput | number | null
-    Start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -5646,17 +5639,6 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type BigIntNullableFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
-  }
-
   export type guildOrderByRelevanceInput = {
     fields: guildOrderByRelevanceFieldEnum | guildOrderByRelevanceFieldEnum[]
     sort: SortOrder
@@ -5689,22 +5671,6 @@ export namespace Prisma {
   export type guildSumOrderByAggregateInput = {
     treasury?: SortOrder
     guild_id?: SortOrder
-  }
-
-  export type BigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedBigIntNullableFilter<$PrismaModel>
-    _min?: NestedBigIntNullableFilter<$PrismaModel>
-    _max?: NestedBigIntNullableFilter<$PrismaModel>
   }
 
   export type QuestsNullableScalarRelationFilter = {
@@ -5785,8 +5751,8 @@ export namespace Prisma {
     details?: SortOrder
     difficulty?: SortOrder
     reward?: SortOrder
-    Start_Date?: SortOrder
-    Completion_Date?: SortOrder
+    start_Date?: SortOrder
+    completion_Date?: SortOrder
   }
 
   export type questsAvgOrderByAggregateInput = {
@@ -5800,8 +5766,8 @@ export namespace Prisma {
     details?: SortOrder
     difficulty?: SortOrder
     reward?: SortOrder
-    Start_Date?: SortOrder
-    Completion_Date?: SortOrder
+    start_Date?: SortOrder
+    completion_Date?: SortOrder
   }
 
   export type questsMinOrderByAggregateInput = {
@@ -5810,8 +5776,8 @@ export namespace Prisma {
     details?: SortOrder
     difficulty?: SortOrder
     reward?: SortOrder
-    Start_Date?: SortOrder
-    Completion_Date?: SortOrder
+    start_Date?: SortOrder
+    completion_Date?: SortOrder
   }
 
   export type questsSumOrderByAggregateInput = {
@@ -5851,14 +5817,6 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type NullableBigIntFieldUpdateOperationsInput = {
-    set?: bigint | number | null
-    increment?: bigint | number
-    decrement?: bigint | number
-    multiply?: bigint | number
-    divide?: bigint | number
   }
 
   export type questsCreateNestedOneWithoutMemberInput = {
@@ -6032,33 +5990,6 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedBigIntNullableFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
-  }
-
-  export type NestedBigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
-    in?: bigint[] | number[] | null
-    notIn?: bigint[] | number[] | null
-    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
-    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedBigIntNullableFilter<$PrismaModel>
-    _min?: NestedBigIntNullableFilter<$PrismaModel>
-    _max?: NestedBigIntNullableFilter<$PrismaModel>
-  }
-
   export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
     in?: Date[] | string[] | null
@@ -6089,8 +6020,8 @@ export namespace Prisma {
     details?: string | null
     difficulty?: string | null
     reward?: number | null
-    Start_Date?: Date | string | null
-    Completion_Date?: Date | string | null
+    start_Date?: Date | string | null
+    completion_Date?: Date | string | null
   }
 
   export type questsUncheckedCreateWithoutMemberInput = {
@@ -6099,8 +6030,8 @@ export namespace Prisma {
     details?: string | null
     difficulty?: string | null
     reward?: number | null
-    Start_Date?: Date | string | null
-    Completion_Date?: Date | string | null
+    start_Date?: Date | string | null
+    completion_Date?: Date | string | null
   }
 
   export type questsCreateOrConnectWithoutMemberInput = {
@@ -6124,8 +6055,8 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     difficulty?: NullableStringFieldUpdateOperationsInput | string | null
     reward?: NullableIntFieldUpdateOperationsInput | number | null
-    Start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type questsUncheckedUpdateWithoutMemberInput = {
@@ -6134,8 +6065,8 @@ export namespace Prisma {
     details?: NullableStringFieldUpdateOperationsInput | string | null
     difficulty?: NullableStringFieldUpdateOperationsInput | string | null
     reward?: NullableIntFieldUpdateOperationsInput | number | null
-    Start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    Completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    start_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    completion_Date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type memberCreateWithoutQuestsInput = {

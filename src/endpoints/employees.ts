@@ -11,6 +11,10 @@ employeeRouters.get("/employees", async (req, res) => {
 		const employee: employees[] = await prisma.employees.findMany({ where: filters });
 		res.json({
 			message: "List of employees",
+			meta: {
+				antal: employee.length,
+				related: "/api/guilds",
+			},
 			data: employee,
 		});
 	} catch (error) {

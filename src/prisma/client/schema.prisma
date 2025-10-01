@@ -18,7 +18,7 @@ model employees {
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model guild {
-  treasury   BigInt?
+  treasury   Int?
   guild_id   Int     @id @default(autoincrement())
   guild_name String? @db.Text
 }
@@ -41,7 +41,7 @@ model quests {
   details         String?   @db.Text
   difficulty      String?   @db.VarChar(2)
   reward          Int?
-  Start_Date      DateTime? @db.Date
-  Completion_Date DateTime? @db.Date
+  start_Date      DateTime? @db.Date
+  completion_Date DateTime? @db.Date
   member          member[]
 }
