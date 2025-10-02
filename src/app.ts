@@ -12,6 +12,14 @@ import errorHandler from "./middleware/errorhandler.js";
 export const prisma = new PrismaClient();
 const app = express();
 
+app.set("view enginge", "ejs");
+app.get("/", (req, res) => {
+	try {
+		res.render("index.ejs");
+	} catch (error) {
+		console.log("something went wrong", error);
+	}
+});
 app.use(logger);
 //add routes below
 

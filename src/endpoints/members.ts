@@ -10,6 +10,10 @@ memberRouters.get("/members", async (req, res) => {
 		const filters = buildFilters(req.query);
 		const member: member[] = await prisma.member.findMany({ where: filters });
 		res.json({
+			meta: {
+				antal: member.length,
+				related: "/api/guilds",
+			},
 			message: "List of members",
 			data: member,
 		});

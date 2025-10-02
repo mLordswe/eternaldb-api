@@ -10,10 +10,10 @@ guildRouters.get("/guild", async (req, res) => {
 		const filters = buildFilters(req.query);
 		const guild: guild[] = await prisma.guild.findMany({ where: filters });
 		res.json({
-			message: "List of guild",
 			meta: {
 				related: ["/api/members", "/api/employees", "/api/quests"],
 			},
+			message: "List of guild",
 			data: guild,
 		});
 	} catch (error) {

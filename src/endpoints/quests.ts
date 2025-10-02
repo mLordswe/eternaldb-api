@@ -12,6 +12,10 @@ questsRouters.get("/quests", async (req, res) => {
 		const quests: quests[] = await prisma.quests.findMany({ where: filters });
 
 		res.json({
+			meta: {
+				antal: quests.length,
+				related: ["/api/guilds", "/api/members"],
+			},
 			message: "List of quests",
 			data: quests,
 		});
